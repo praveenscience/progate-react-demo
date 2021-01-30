@@ -1,11 +1,20 @@
 import React, { Component } from "react";
-
+import Header from "./Header";
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello Progate</h1>
-        <h2>Students are Awesome!</h2>
+        {[
+          "Progate App",
+          "Progate App Lite",
+          "Progate App Dark",
+          "Light Weight",
+          "Dark Chocolate"
+        ].map((text, key) => (
+          <Header dark={key % 2 === 0} key={key}>
+            {text}
+          </Header>
+        ))}
       </div>
     );
   }
